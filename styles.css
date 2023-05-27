@@ -1,0 +1,88 @@
+:root{
+    --body-light-background: #e8ecf1;
+    --body-dark-background: #4d4e65;
+    --container-light-background: #ffffff;
+    --container-dark-background: #1c1c1c;
+    --container-light-text-color: #000000;
+    --container-dark-text-color: #ffffff;
+    --day-date-container-light-text-color: #79858f;
+    --day-date-container-dark-text-color: #b5b5b5;
+    --button-light-text-color: #000000;
+    --button-dark-text-color: #ffffff;
+    --button-light-border-color: #e5e4e8;
+    --button-dark-border-color: #f7f6fa66;
+}
+
+body{
+    transition: all 250ms ease;
+    padding: 0;
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    max-height: 100vh;
+    max-width: 100vw;
+    height: 100%;
+    width: 100%;
+    background: var(--body-light-background);
+}
+
+.container{
+    transition: all 250ms ease;
+    color: var(--container-light-text-color);
+    height: 330px;
+    width: 280px;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    background-color: var(--container-light-background);
+    border-radius: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.container .time-date-day-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .time-date-day-container .time-container{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.container .time-date-day-container .day-date-container{
+    transition: all 250ms ease;
+    color: var(--day-date-container-light-text-color);
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .time-date-day-container .day-date-container .day-name-container{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.container .mode-select-button{
+    transition: all 250ms ease;
+    color: var(--button-light-text-color);
+    position: static;
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    width: 160px;
+    padding: 20px;
+    border: 3px solid var(--button-light-border-color);
+    border-radius: 100vw;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
