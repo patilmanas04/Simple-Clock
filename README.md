@@ -2,6 +2,10 @@
 
 This project is a simple clock application built using HTML, CSS, and JavaScript.
 
+## Demo
+
+The website is live at: https://patilmanas04.github.io/Simple-Clock/
+
 ## Features
 
 - Displays the current time accurately.
