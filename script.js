@@ -14,18 +14,23 @@ const getMonthName = (monthIndex)=>{
 }
 
 const updateTime = ()=>{
-    let date = new Date();
-    let hh = date.getHours();
+    const date = new Date();
+    const hh24HoursFormat = date.getHours();
+    const am_pm = (hh24HoursFormat>=12) ? 'PM' : 'AM';
+    let hh = (hh24HoursFormat>12) ? hh24HoursFormat-12 : hh24HoursFormat;
+    hh = (hh<10) ? '0'+hh : hh;
     let mm = date.getMinutes();
-    let ss = date.getSeconds();
+    mm = (mm<10) ? '0'+mm : mm;
+    const time = `${hh}:${mm} ${am_pm}`
     let dayName = getDayName(date.getDay());;
     let monthDate = date.getDate();
     let month = getMonthName(date.getMonth());
     let year = date.getFullYear();
+    
 
-    timeContainer.innerHTML = `${hh}:${mm}:${ss}`;
-    dayNameContainer.innerHTML = `${dayName}`;
-    dateContainer.innerHTML = `${month} ${monthDate}, ${year}`;
+    timeContainer.textContent = time;
+    dayNameContainer.textContent = `${dayName}`;
+    dateContainer.textContent = `${month} ${monthDate}, ${year}`;
 }
 
 setInterval(updateTime, 1000);
